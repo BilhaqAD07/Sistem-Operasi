@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1646588393 "main.aux" "main.bbl" "main" 1646588393
+["bibtex main"] 1646588674 "main.aux" "main.bbl" "main" 1646588674
   "Referensi.bib" 0 -1 0 ""
   "c:/texlive/2021/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1646543859 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1646588390 4397 da1f6bb654521f4672a4ba2b927d0ae8 "pdflatex"
+  "main.aux" 1646588661 4398 0061d351381392898a95cc1cbbea7d07 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1646588386 "d:/BAD/ITERA/Sistem-Operasi/Minggu3/main.tex" "main.pdf" "main" 1646588393
+["pdflatex"] 1646588657 "d:/BAD/ITERA/Sistem-Operasi/Minggu3/main.tex" "main.pdf" "main" 1646588674
   "Figure/Spek Sistem.png" 1646574709 113497 4ee7d56a44ccb47a1cda7794d3a30f13 ""
   "Figure/assign 6.png" 1646554014 449009 919479cec260a561dd0f2ec3e27086d2 ""
   "Figure/assign 8.png" 1646554014 172534 d111326ad9f6d124f33711bdfdf22a5d ""
@@ -253,11 +253,11 @@
   "c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1646550785 4448422 1ce8db434ffa4259b75148f2b12051ea ""
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1646550945 2797722 fdee43d8efb1a174d53f22e129df7ad1 ""
   "c:/texlive/2021/texmf.cnf" 1646550721 713 e69b156964470283e0530f5060668171 ""
-  "d:/BAD/ITERA/Sistem-Operasi/Minggu3/main.tex" 1646588382 12688 879c83b9c8473b671a95913b412eac20 ""
-  "main.aux" 1646588390 4397 da1f6bb654521f4672a4ba2b927d0ae8 "pdflatex"
+  "d:/BAD/ITERA/Sistem-Operasi/Minggu3/main.tex" 1646588673 12689 88986bd21d3df7d5fae95f06748c7f8d ""
+  "main.aux" 1646588661 4398 0061d351381392898a95cc1cbbea7d07 "pdflatex"
   "main.bbl" 0 -1 0 "bibtex main"
-  "main.out" 1646588390 2283 72e80455babb1cf83046d94d3c5d7bc1 "pdflatex"
-  "main.tex" 1646588382 12688 879c83b9c8473b671a95913b412eac20 ""
+  "main.out" 1646588661 2291 b1f8f21158846b5f4b7a46076ddaa4ab "pdflatex"
+  "main.tex" 1646588673 12689 88986bd21d3df7d5fae95f06748c7f8d ""
   (generated)
   "main.aux"
   "main.log"
