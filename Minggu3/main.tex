@@ -89,7 +89,7 @@
 \pagestyle{fancy}
 \lhead{ \student }
 \rhead{ \thepage}
-\cfoot{\textbf{Judul Tugas diketik di sini}} % ini untuk judul tugas
+\cfoot{\textbf{Hands On 1: Working With Linux}} % ini untuk judul tugas
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -123,79 +123,192 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BODY DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Header Pertama}
-    Untuk menggunakan header, anda cukup membuat $\backslash${\tt{section}} pada bagian script anda. Penomoran pada header akan otomatis dibuat. Jika anda membutuhkan line break, anda dapat membubuhkan dua garis miring dengan backslash seperti berikut $\backslash\backslash$
+\section{Tujuan Hands On 1}
+    Tujuan adanya Hands On pertama ini sebagai bentuk perkenalan dan pengembangan diri terhadap sistem operasi linux, 
+	khususnya Ubuntu LINUX 20.04 yang diapakai oleh mahasiswa IF2223. Pada Hands On kali ini berfokus terhadap pengenalan 
+	materi dasar dan perintah yang digunakan pada sistem operasi linux dan juga implementasinya. Sehingga para mahasiswa 
+	dapat tau konsep dasar dan juga perintah yang digunakan pada sistem operasi linux.
 
-\section{Cara Mencantumkan Link}
-    Anda dapat memulai belajar menulis di \LaTeX dengan menulis tugas atau laporan yang sesungguhnya. Pada awalnya mungkin terasa sulit. Namun jika anda dengan tekun tetap berlatih, justru menulis di LaTeX akan membuat anda terbiasa dan malah lebih menyenangkan ketimbang menulis di Microsoft Word.\\
-    Jika anda ingin mencantumkan link di \LaTeX anda dapat melakukannya dengan perintah $\backslash${\tt{href}}, misalnya pada tautan berikut ini \href{http://aldi_tob_2000.staff.gunadarma.ac.id/Downloads/files/17359/Membuat+dokumen+dengan+latex.pdf}{(Sumber: PDF Tutorial Belajar Latex)}.
-    
-\subsection{Sub Header atau Sub Chapter}
-     Untuk menggunakan subheader, anda cukup membuat $\backslash${\tt{subsection}} atau bahkan  $\backslash${\tt{subsubsection}} untuk sub-sub bab. Lalu bagaimana untuk membuat subheader atau bahkan header namun tanpa penomoran? Cek keterangan di bawah ini.
-
-\subsection*{Header Tanpa Penomoran}
-     Untuk menggunakan subheader tanpa penomoran, anda cukup membuat $\backslash${\tt{subsection*}} atau bahkan  $\backslash${\tt{subsubsection*}} maupun $\backslash${\tt{section*}}.
-    
-\subsection{Bold, Italic, Plaintext}
-\begin{itemize}
-    \item Anda dapat membuat cetak tebal dengan perintah $\backslash${\tt{textbf}} seperti \textbf{berikut ini}.
-    \item Anda dapat membuat cetak miring dengan perintah $\backslash${\tt{textit}} seperti \textit{berikut ini}. \item Untuk menggaris bawahi, tinggal ketikkan perintah $\backslash${\tt{underline}} seperti \underline{berikut ini}.
-    \item Untuk membuat list seperti tulisan ini, gunakan perintah $\backslash${\tt{item}} diantara
-\end{itemize}
-
-\subsection{Code Snippets}
-    Berikut ini adalah contoh dari penggunaan $\backslash${\tt{begin{lstlisting}}} untuk menulis potongan kode. Dalam kasus ini saya menggunakan bahasa Python. Jika anda menggunakan C atau yang lainnya, tinggal sesuaikan di bagian parameter dari $\backslash${\tt{begin{lstlisting}}}. Anda dapat melihatnya pada code snipptes \ref{labelkode}
-    
-    \begin{lstlisting}[language=Python, caption=Captionnya tulis di sini class,label={labelkode}]
-    class SynthiaDataset(Dataset):
-
-    CLASSES = [
-        "void", "road", "sidewalk", "building", "wall", "fence", "pole", "traffic light", 
-        "traffic sign", "vegetation", "terrain", "sky", "person", "rider", "car", "truck", 
-        "bus", "train", "motorcycle", "bicycle", "road lines", "other", "road works"
-    ]
-    
-    def __init__(self, path="../SYNTHIA-SF", classes=None, augmentation=None, preprocessing=None, valid=False):
-        self.rootdir = Path(path)
-        self.data_imgs, self.data_gts = self.prepare_data(valid,path)
-        self.valid = valid
-
-    
-        if classes == None:
-            classes = self.CLASSES 
-        self.class_values = [self.CLASSES.index(cls.lower()) for cls in classes]
-        
-        self.augmentation = augmentation
-        self.preprocessing = preprocessing
-    \end{lstlisting}
-
-\section{Memuat Multi-Gambar}
-Berikut ini adalah contoh cara untuk memuat multi-gambar.
-
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[b]{0.4\textwidth}
+\section{Spesifikasi Sistem}
+    Spesifikasi yang digunakan dalam Hands On pertama adalah sistem operasi Ubunti Linux 20.04 (64 bit) dengan base memory 2048 MB, 
+	2 Prosessor, Video Memory 16 MB, dan dengan Storage Sata Port 30,00 GB.
+	\begin{figure}[h]
 		\centering
-		\def\svgwidth{\columnwidth}
-		\includegraphics[width=1\textwidth]{Figure/tut 1.1.png}
-		\caption{Augment Result 1}
-		\label{fig:aug-1}
-	\end{subfigure}
-	\qquad %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-	%(or a blank line to force the subfigure onto a new line)
-	\begin{subfigure}[b]{0.4\textwidth}
-		\centering
-		\def\svgwidth{\columnwidth}
-		\includegraphics[width=1\textwidth]{Figure/tut 1.2.png}
-		\caption{Augment Result 2}
-		\label{fig:aug-2}
-	\end{subfigure}
-	\caption{Augmentation Samples}\label{fig:aug}
-\end{figure}
+		\includegraphics[width=0.8\textwidth]{Figure/Spek Sistem.png}
+		\caption{Spesifikasi Sistem}
+	\end{figure}
 
+\section{Pembahasan Tut 1}
+\subsection{Tut 1.1 \textit{echo}}
+	Pada percobaan tut 1.1 ini akan mencoba perintah \textit{echo} yang akan menampilkan pesan yang kita tuliskan. Pesan yang akan 
+	di tulis ialah \textit{"Hello World"}. Dan dengan begitu adanya echo Hello World, maka akan mengeluarkan \textit{Hello World} 
+	di dalam terminal Linux.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/tut 1.1.png}
+		\caption{Percobaan Tut 1.1}
+	\end{figure}
+
+\subsection{Tut 1.2\textit{main}}
+    Pada percobaan tut 1.2 ini akan mencoba perintah main, dengan mengetik perintah \textit{main echo} di terminal, maka akan 
+	mengeluarkan fungsi-fungsi dari sebuah \textit{command} main yang berguna dalam menampilkan sebuah fungsi. Dan dengan adanya \textit{main echo},
+	maka akan menampilkan berbagai perintah dan kegunaan dari perintah echo yang dijelaskan secara mendetail.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/tut 1.2.png}
+		\caption{Percobaan Tut 1.2}
+	\end{figure}
+
+\subsection{Tut 1.3 \textit{echo SHELL}}
+	Pada percobaan tut 1.3 ini akan mencoba perintah \textit{echo SHELL} yang akan menampilkan pesan yang kita tuliskan. Pesan yang akan
+	di tampilkan dari perintah tersebut ialah mengeluarkan directory \textit{/bin/bash} pada layar terminal.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/tut 1.3.png}
+		\caption{Percobaan Tut 1.3}
+	\end{figure}
+
+\subsection{Tut 1.4 \textit{who, cd, mkdir, touch, ls, cp, rm}}
+	Pada percobaan tut 1.4 ini akan mencoba perintah \textit{who}, \textit{cd}, \textit{mkdir}, \textit{touch}, \textit{ls}, \textit{cp}, 
+	\textit{rm} yang akan menampilkan informasi tentang user, directory, membuat directory, membuat file, menampilkan file, 
+	menyalin file, dan menghapus file.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/tut 1.4.png}
+		\caption{Percobaan Tut 1.4}
+	\end{figure}
 
 \newpage
-\section{Memuat Multi-Gambar}
+\section{Pembahasan Tut 2}
+\subsection{Tut 2.1 \textit{sed}}
+	Pada percobaan tut 2.1 ini akan mencoba perintah \textit{sed} yang diminta untuk menghapus 1 karakter di depan dan dibelakang
+	di setiap baris code. Sebelumnya saya mencoba untuk membuat file \textit{testing.txt} yang digunakan sebagai tempat eksekusi sed.
+	Kemudian, barulah saya membuka terminal untuk mulai proses menghapus karakternya dengan perintah \textit{sed} seperti di gambar.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/tut 2.1.png}
+		\caption{Percobaan Tut 2.1}
+	\end{figure}
+
+\subsection{Tut 2.2 \textit{grep}}
+	Pada percobaan tut 2.2 ini akan mencoba perintah \textit{grep} yang diminta untuk mencari karakter tertentu pada sebuah file.
+	Sebelumnya saya membuat file \textit{testing.txt} yang digunakan sebagai tempat eksekusi grep. Kemudian, barulah saya membuka terminal 
+	untuk mulai proses pencarian kata \textit{saya} pada file \textit{testing.txt} seperti yang digambar.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{Figure/tut 2.2.png}
+		\caption{Percobaan Tut 2.2}
+	\end{figure}
+
+\section{Pembahasan Tut 3}
+\subsection{Tut 3.1 \textit{Shell Scripting}}
+	Pada percobaan tut 3.1 ini akan mencoba perintah \textit{nano} untuk membuat file \textit{test.sh} yang digunakan sebagai tempat mengisi
+	kata \textit{echo Hello World}. Selanjutnya, untuk me-run file tersebut diperlukan mengetik \textit{chmod +x test.SH} di terminal. Barulah 
+	selanjutnya saya mengetik \textit{./test.sh} di terminal untuk menjalankannya.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/tut 3.png}
+		\caption{Percobaan Tut 3.1}
+	\end{figure}
+
+\section{\textit{Assingment 6}}
+\subsection*{Source Code}
+\begin{lstlisting}[language=bash]
+		#get filename
+		echo -n "Nama file : "
+		read bilhaqavidewantara
+
+		if [!-f $bilhaqavidewantara]
+		then
+		echo "Nama File $bilhaqavidewantara dosen not exist"
+		exit 1
+		fi
+		tr '[a-z]' '[A-Z]' < $bilhaqavidewantara 
+	\end{lstlisting}
+	
+\subsection*{Penjelasan}
+	Pada percobaan \textit{Assignment 6} ini akan mencoba perintah untuk mengubah kalimat yang awalnya berhuruf kecil menjadi 
+	kalimat berhuruf besar semua. Pertama saya membuat file \textit{Handson1\_6\_120140141.sh} berisi kode seperti gambar.
+	Setelah itu, diperlukan membuat file \textit{test\_6.sh} yang berisi string bebas, dalam hal ini saya isi file tersebut dengan 
+	\textit{"bilhaq avi dewantara"}. Kemudian, barulah membuka terminal untuk mengeksekusi program tersebut.
+	Pastikan kedua file sudah berada di \textit{directory} yang sama agar memudahkan.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/assign 6.png}
+		\caption{Percobaan Assingment 6}
+	\end{figure}
+	
+\section{Assignment 8}
+\subsection*{Source Code}
+\begin{lstlisting}[language=bash]
+		echo "Input nama file : "
+		read fname
+		echo "Input line pertama yang ingin di output : "
+		read s
+		echo "Input line terakhir yang ingin di output : "
+		read n
+		sed -n $s,$n\p $fname | cat > newline
+		cat newline
+\end{lstlisting}
+
+\subsection*{Penjelasan}
+	Pada percobaan \textit{Assignment 8} ini akan mencoba untuk menampilkan baris kalimat yang ingin di \textit{output} dari file.
+	Pertama saya membuat file \textit{Handson1\_8\_120140141.sh} berisi kode seperti gambar. Setelah itu, diperlukan membuat file \textit{test\_8.sh}
+	untuk membuat kata-kata sebagai \textit{input}. Untuk menjalankannya kita perlu membuka terminal dan user diminta untuk memasukkan 
+	baris awal yang akan di \textit{output} dan baris akhir yang akan di \textit{output} pada layar terminal.
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/assign 8.png}
+		\caption{Percobaan Assingment 8}
+	\end{figure}
+
+\newpage
+\section{Assignment 9}
+\subsection*{Source Code}
+\begin{lstlisting}[language=bash]
+		echo "Masukkan kata untuk mencocokkan isi dalam file : "  
+		read pat  
+		for file in $@  
+		do  
+			if ! [ -r $file ]  
+			then  
+				echo "File tidak ada atau tidak terbaca!"  
+				continue  
+			fi  
+			echo "Sebelum -------------------------"  
+			cat $file  
+			sed -i "/$pat/d" $file  
+			echo "Sesudah --------------------------"  
+			cat $file  
+		done
+\end{lstlisting}
+
+\subsection*{Penjelasan}
+	Pada percobaan \textit{Assignment 9} ini akan mencoba untuk menghapus baris kalimat yang mengandung kata yang dicari.
+	Pertama saya membuat file \textit{Handson1\_9\_120140141.sh} berisi kode seperti gambar. Setelah itu, diperlukan membuat file \textit{test\_9.sh}
+	untuk membuat kata-kata sebagai \textit{input}. Untuk menjalankannya kita perlu membuka terminal dan user diminta untuk memasukkan 
+	kata untuk mencocokkan baris yang ingin di hapus dan akan di \textit{output} pada layar terminal. Pada kode kali ini menggunakan 
+	implementasi perintah \textit{echo, read, for, do, if, then, continue, fi, cat, dan sed}.
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Figure/assign 9.png}
+		\caption{Percobaan Assingment 9}
+	\end{figure}
+
+\newpage
+\section{Kesimpulan}
+	Pada Hands On 1 ini yang saya dapatkan setelah menjalankannya ialah saya dapat mengenal sistem operasi linux
+	khususnya Ubuntu 20.04 LTS ini meskipun hanya menggunakan Oracle VirtualBox. Selain itu, saya dapat mengetahui
+	banyak hal dari tugas ini yaitu itu menggunakan konsep-konsep baru dan mengimplementasikannya pada terminal di linux.
+	Dengan begitu, saya dapat menyelesaikan tugas ini sesuai dengan kemampuan yang saya miliki terutama menggunakan latex
+	ini yang baru bagi saya, sehingga banyak sekali yang saya dapatkan dari tugas ini.
+		
+\section{Link GitHub}
+	Link GitHub dari Hands On 1 ini : \href{https://github.com/BilhaqAD07/Sistem-Operasi.git}{Klik disini}
+
+
 \newpage
 \bibliographystyle{IEEEtran}
 \bibliography{Referensi}

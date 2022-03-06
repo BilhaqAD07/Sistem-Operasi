@@ -1286,26 +1286,23 @@ INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm
-INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
-INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
-INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
-INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
-INPUT c:/texlive/2021/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
-INPUT c:/texlive/2021/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
-INPUT c:/texlive/2021/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
-INPUT c:/texlive/2021/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-ts1.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm
+INPUT ./Figure/Spek Sistem.png
+INPUT ./Figure/Spek Sistem.png
+INPUT Figure/Spek Sistem.png
+INPUT ./Figure/Spek Sistem.png
+INPUT ./Figure/Spek Sistem.png
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTBI-tlf-t1.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-t1.tfm
-INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
+INPUT ./Figure/tut 1.1.png
+INPUT ./Figure/tut 1.1.png
+INPUT Figure/tut 1.1.png
+INPUT ./Figure/tut 1.1.png
+INPUT ./Figure/tut 1.1.png
+INPUT ./Figure/tut 1.2.png
+INPUT ./Figure/tut 1.2.png
+INPUT Figure/tut 1.2.png
+INPUT ./Figure/tut 1.2.png
+INPUT ./Figure/tut 1.2.png
 INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineT-tlf-t1.vf
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1--base.tfm
 INPUT c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map
@@ -1315,44 +1312,92 @@ INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineTB-tlf-t1
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1--base.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineT-tlf-t1.vf
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1--base.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineT-tlf-t1.vf
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1--base.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineT-tlf-ts1.vf
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-ts1--base.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineTB-tlf-t1.vf
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1--base.tfm
+INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineTBI-tlf-t1.vf
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTBI-tlf-t1--base.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineTI-tlf-t1.vf
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-t1--base.tfm
-INPUT ./Figure/tut 1.1.png
-INPUT ./Figure/tut 1.1.png
-INPUT Figure/tut 1.1.png
-INPUT ./Figure/tut 1.1.png
-INPUT ./Figure/tut 1.1.png
+INPUT ./Figure/tut 1.3.png
+INPUT ./Figure/tut 1.3.png
+INPUT Figure/tut 1.3.png
+INPUT ./Figure/tut 1.3.png
+INPUT ./Figure/tut 1.3.png
+INPUT ./Figure/tut 1.4.png
+INPUT ./Figure/tut 1.4.png
+INPUT Figure/tut 1.4.png
+INPUT ./Figure/tut 1.4.png
+INPUT ./Figure/tut 1.4.png
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm
+INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineTB-tlf-t1.vf
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1--base.tfm
+INPUT ./Figure/tut 2.1.png
+INPUT ./Figure/tut 2.1.png
+INPUT Figure/tut 2.1.png
+INPUT ./Figure/tut 2.1.png
+INPUT ./Figure/tut 2.1.png
+INPUT ./Figure/tut 2.2.png
+INPUT ./Figure/tut 2.2.png
+INPUT Figure/tut 2.2.png
+INPUT ./Figure/tut 2.2.png
+INPUT ./Figure/tut 2.2.png
+INPUT ./Figure/tut 3.png
+INPUT ./Figure/tut 3.png
+INPUT Figure/tut 3.png
+INPUT ./Figure/tut 3.png
+INPUT ./Figure/tut 3.png
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTBI-tlf-t1.tfm
+INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
+INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
+INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
+INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
-INPUT ./Figure/tut 1.2.png
-INPUT ./Figure/tut 1.2.png
-INPUT Figure/tut 1.2.png
-INPUT ./Figure/tut 1.2.png
-INPUT ./Figure/tut 1.2.png
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1.tfm
+INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/ts1fvm.fd
+INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/ts1fvm.fd
+INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/ts1fvm.fd
+INPUT c:/texlive/2021/texmf-dist/tex/latex/bera/ts1fvm.fd
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8c.tfm
+INPUT ./Figure/assign 6.png
+INPUT ./Figure/assign 6.png
+INPUT Figure/assign 6.png
+INPUT ./Figure/assign 6.png
+INPUT ./Figure/assign 6.png
+INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineTBI-tlf-t1.vf
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineTBI-tlf-t1--base.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineT-tlf-t1.vf
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1--base.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/libertine/LinLibertineT-tlf-t1.vf
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1--base.tfm
+INPUT c:/texlive/2021/texmf-dist/fonts/vf/public/bera/fvmr8c.vf
+INPUT ./Figure/assign 8.png
+INPUT ./Figure/assign 8.png
+INPUT Figure/assign 8.png
+INPUT ./Figure/assign 8.png
+INPUT ./Figure/assign 8.png
+INPUT ./Figure/assign 9.png
+INPUT ./Figure/assign 9.png
+INPUT Figure/assign 9.png
+INPUT ./Figure/assign 9.png
+INPUT ./Figure/assign 9.png
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
-INPUT c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
-INPUT c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc
 INPUT c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc
-INPUT c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertinust1math/libusMR.enc
+INPUT c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
+INPUT c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc
 INPUT c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc
 INPUT c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc
-INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb
 INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb
 INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb
+INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinLibertineTBI.pfb
 INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb
 INPUT c:/texlive/2021/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb
