@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1646595837 "main.aux" "main.bbl" "main" 1646595846
+["bibtex main"] 1649491841 "main.aux" "main.bbl" "main" 1649491841
   "Referensi.bib" 0 -1 0 ""
   "c:/texlive/2021/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1646543859 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
   "main.aux" 1646595843 4397 bcd8aa93cf7a03d759b2f942f504b567 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1646595837 "d:/BAD/ITERA/Sistem-Operasi/Minggu3/main.tex" "main.pdf" "main" 1646595846
+["pdflatex"] 1646595837 "d:/BAD/ITERA/Sistem-Operasi/Minggu3/main.tex" "main.pdf" "main" 1649491841
   "Figure/Spek Sistem.png" 1646574709 113497 4ee7d56a44ccb47a1cda7794d3a30f13 ""
   "Figure/assign 6.png" 1646554014 449009 919479cec260a561dd0f2ec3e27086d2 ""
   "Figure/assign 8.png" 1646554014 172534 d111326ad9f6d124f33711bdfdf22a5d ""

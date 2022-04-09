@@ -1,24 +1,14 @@
 # Fdb version 3
-["bibtex main"] 0 "main.aux" "main.bbl" "main" 0
+["bibtex main"] 1649493767 "main.aux" "main.bbl" "main" 1649493767
   "Referensi.bib" 0 -1 0 ""
   "c:/texlive/2021/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1646543859 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 0 -1 0 "pdflatex"
+  "main.aux" 1649493709 3160 ae794c79d64b5c48e3b93a14a5cfe707 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1649491716 "d:/BAD/ITERA/Sistem-Operasi/Minggu9/main.tex" "main.pdf" "main" 1649491716
-  "Figure/Spek Sistem.png" 0 -1 0 ""
-  "Figure/assign 6.png" 0 -1 0 ""
-  "Figure/assign 8.png" 0 -1 0 ""
-  "Figure/assign 9.png" 0 -1 0 ""
+["pdflatex"] 1649493704 "d:/BAD/ITERA/Sistem-Operasi/Minggu9/main.tex" "main.pdf" "main" 1649493767
+  "Figure/fork.png" 1649477461 144853 353be3146f4280156dca812dcef692a3 ""
   "Figure/ifitera-header.png" 1646553650 105262 7fe1bcaf31c1fe943ce3e952b4c15ef1 ""
-  "Figure/tut 1.1.png" 0 -1 0 ""
-  "Figure/tut 1.2.png" 0 -1 0 ""
-  "Figure/tut 1.3.png" 0 -1 0 ""
-  "Figure/tut 1.4.png" 0 -1 0 ""
-  "Figure/tut 2.1.png" 0 -1 0 ""
-  "Figure/tut 2.2.png" 0 -1 0 ""
-  "Figure/tut 3.png" 0 -1 0 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1646541997 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1646545170 2933 9ad527ce78d7c5fa0a642dead095f172 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc" 1646545170 2934 a4a9158faed2e9e89c771b4e3b7fc12f ""
@@ -253,11 +243,11 @@
   "c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1646550785 4448422 1ce8db434ffa4259b75148f2b12051ea ""
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1646550945 2797722 fdee43d8efb1a174d53f22e129df7ad1 ""
   "c:/texlive/2021/texmf.cnf" 1646550721 713 e69b156964470283e0530f5060668171 ""
-  "d:/BAD/ITERA/Sistem-Operasi/Minggu9/main.tex" 1649491701 12764 67075b5477e095cb5df97d950f79d316 ""
-  "main.aux" 1649491716 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "d:/BAD/ITERA/Sistem-Operasi/Minggu9/main.tex" 1649493695 11827 5a78f3ec5a45c90ffe283ab4fca177eb ""
+  "main.aux" 1649493709 3160 ae794c79d64b5c48e3b93a14a5cfe707 "pdflatex"
   "main.bbl" 0 -1 0 "bibtex main"
-  "main.out" 0 -1 0 "pdflatex"
-  "main.tex" 1649491701 12764 67075b5477e095cb5df97d950f79d316 ""
+  "main.out" 1649493709 2442 25151ecb0bb52bc1bfc93225b9471a65 "pdflatex"
+  "main.tex" 1649493695 11827 5a78f3ec5a45c90ffe283ab4fca177eb ""
   (generated)
   "main.aux"
   "main.log"
