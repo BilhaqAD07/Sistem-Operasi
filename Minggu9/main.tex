@@ -107,7 +107,7 @@
 \begin{document}
 \thispagestyle{empty}
 \begin{center}
-	\includegraphics[scale = 0.15]{Figure/ifitera-header.png}
+	\includegraphics[scale = 0.15]{Figure1/ifitera-header.png}
 	\vspace{0.1cm}
 \end{center}
 \noindent
@@ -169,125 +169,564 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 \subsection{Output}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale = 0.8]{Figure/fork.png}
-	\caption{Fork/Join}
+	\includegraphics[width=0.8\textwidth]{Figure1/fork.png}
+	\caption{\textit{Fork/Join}}
 \end{figure}
 
+\subsection{Penjelasan \textit{Fork/Join}}
 
-\section{Pembahasan Tut 1}
-\subsection{Tut 1.1 \textit{echo}}
-	Pada percobaan tut 1.1 ini akan mencoba perintah \textit{echo} yang akan menampilkan pesan yang kita tuliskan. Pesan yang akan 
-	di tulis ialah \textit{"Hello World"}. Dan dengan begitu adanya \textit{echo Hello World}, maka akan mengeluarkan \textit{Hello World} 
-	di dalam terminal Linux.
-	
 
-\subsection{Tut 1.2 \textit{man}}
-    Pada percobaan tut 1.2 ini akan mencoba perintah \textit{man}, dengan mengetik perintah \textit{man echo} di terminal, maka akan 
-	mengeluarkan fungsi-fungsi dari sebuah \textit{command man} yang berguna dalam menampilkan sebuah fungsi. Dan dengan adanya \textit{man echo},
-	maka akan menampilkan berbagai perintah dan kegunaan dari perintah echo yang dijelaskan secara mendetail.
-	
+\section{Binary Semaphores}
+\subsection{Source Code}
+\begin{lstlisting}[language=C]
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <pthread.h>
+	#include <unistd.h>
 
-\subsection{Tut 1.3 \textit{echo SHELL}}
-	Pada percobaan tut 1.3 ini akan mencoba perintah \textit{echo SHELL} yang akan menampilkan pesan yang kita tuliskan. Pesan yang akan
-	di tampilkan dari perintah tersebut ialah mengeluarkan directory \textit{/bin/bash} pada layar terminal.
-	
+	#include "common.h"
+	#include "common_threads.h"
 
-\subsection{Tut 1.4 \textit{who, cd, mkdir, touch, ls, cp, rm}}
-	Pada percobaan tut 1.4 ini akan mencoba perintah \textit{who}, \textit{cd}, \textit{mkdir}, \textit{touch}, \textit{ls}, \textit{cp}, 
-	\textit{rm} yang akan menampilkan informasi tentang \textit{user}, \textit{directory}, membuat \textit{directory}, membuat file, menampilkan file, 
-	menyalin file, dan menghapus file.
-	
+	#ifdef linux
+	#include <semaphore.h>
+	#elif __APPLE__
+	#include "zemaphore.h"
+	#endif
 
-\newpage
-\section{Pembahasan Tut 2}
-\subsection{Tut 2.1 \textit{sed}}
-	Pada percobaan tut 2.1 ini akan mencoba perintah \textit{sed} yang diminta untuk menghapus 1 karakter di depan dan dibelakang
-	di setiap baris code. Sebelumnya saya mencoba untuk membuat file \textit{testing.txt} yang digunakan sebagai tempat eksekusi \textit{sed}.
-	Kemudian, barulah saya membuka terminal untuk mulai proses menghapus karakternya dengan perintah \textit{sed} seperti di gambar.
-	
+	sem_t mutex;
+	volatile int counter = 0;
 
-\subsection{Tut 2.2 \textit{grep}}
-	Pada percobaan tut 2.2 ini akan mencoba perintah \textit{grep} yang diminta untuk mencari karakter tertentu pada sebuah file.
-	Sebelumnya saya membuat file \textit{testing.txt} yang digunakan sebagai tempat eksekusi \textit{grep}. Kemudian, barulah saya membuka terminal 
-	untuk mulai proses pencarian kata \textit{saya} pada file \textit{testing.txt} seperti yang digambar.
-	
+	void *child(void *arg) {
+		int i;
+		for (i = 0; i < 10000000; i++) {
+		Sem_wait(&mutex);
+		counter++;
+		Sem_post(&mutex);
+		}
+		return NULL;
+	}
 
-\section{Pembahasan Tut 3}
-\subsection{Tut 3.1 \textit{Shell Scripting}}
-	Pada percobaan tut 3.1 ini akan mencoba perintah \textit{nano} untuk membuat file \textit{test.sh} yang digunakan sebagai tempat mengisi
-	kata \textit{echo Hello World}. Selanjutnya, untuk me-\textit{run} file tersebut diperlukan mengetik \textit{chmod +x test.SH} di terminal. Barulah 
-	selanjutnya saya mengetik \textit{./test.sh} di terminal untuk menjalankannya.
-	
-
-\section{\textit{Assingment 6}}
-\subsection*{Source Code}
-\begin{lstlisting}[language=bash]
-		#get filename
-		echo -n "Nama file : "
-		read bilhaqavidewantara
-
-		if [!-f $bilhaqavidewantara]
-		then
-		echo "Nama File $bilhaqavidewantara dosen not exist"
-		exit 1
-		fi
-		tr '[a-z]' '[A-Z]' < $bilhaqavidewantara 
-	\end{lstlisting}
-	
-\subsection*{Penjelasan}
-	Pada percobaan \textit{Assignment 6} ini akan mencoba perintah untuk mengubah kalimat yang awalnya berhuruf kecil menjadi 
-	kalimat berhuruf besar semua. Pertama saya membuat file \textit{Handson1\_6\_120140141.sh} berisi kode seperti gambar.
-	Setelah itu, diperlukan membuat file \textit{test\_6.sh} yang berisi string bebas, dalam hal ini saya isi file tersebut dengan 
-	\textit{"bilhaq avi dewantara"}. Kemudian, barulah membuka terminal untuk mengeksekusi program tersebut.
-	Pastikan kedua file sudah berada di \textit{directory} yang sama agar memudahkan.
-	
-	
-\section{Assignment 8}
-\subsection*{Source Code}
-\begin{lstlisting}[language=bash]
-		echo "Input nama file : "
-		read fname
-		echo "Input line pertama yang ingin di output : "
-		read s
-		echo "Input line terakhir yang ingin di output : "
-		read n
-		sed -n $s,$n\p $fname | cat > newline
-		cat newline
+	int main(int argc, char *argv[]) {
+		Sem_init(&mutex, 1); 
+		pthread_t c1, c2;
+		Pthread_create(&c1, NULL, child, NULL);
+		Pthread_create(&c2, NULL, child, NULL);
+		Pthread_join(c1, NULL);
+		Pthread_join(c2, NULL);
+		printf("result: %d (should be 20000000)\n", counter);
+		return 0;
+	}
 \end{lstlisting}
 
-\subsection*{Penjelasan}
-	Pada percobaan \textit{Assignment 8} ini akan mencoba untuk menampilkan baris kalimat yang ingin di \textit{output} dari file.
-	Pertama saya membuat file \textit{Handson1\_8\_120140141.sh} berisi kode seperti gambar. Setelah itu, diperlukan membuat file \textit{test\_8.sh}
-	untuk membuat kata-kata sebagai \textit{input}. Untuk menjalankannya kita perlu membuka terminal dan user diminta untuk memasukkan 
-	baris awal yang akan di \textit{output} dan baris akhir yang akan di \textit{output} pada layar terminal.
+\subsection{Output}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figure1/binary.png}
+	\caption{\textit{Binary Semaphores}}
+\end{figure}
 
-\newpage
-\section{Assignment 9}
-\subsection*{Source Code}
-\begin{lstlisting}[language=bash]
-		echo "Masukkan kata untuk mencocokkan isi dalam file : "  
-		read pat  
-		for file in $@  
-		do  
-			if ! [ -r $file ]  
-			then  
-				echo "File tidak ada atau tidak terbaca!"  
-				continue  
-			fi  
-			echo "Sebelum -------------------------"  
-			cat $file  
-			sed -i "/$pat/d" $file  
-			echo "Sesudah --------------------------"  
-			cat $file  
-		done
+\subsection{Penjelasan \textit{Binary Semaphores}}
+
+\section{Producer/Consumer}
+\subsection{Source Code}
+\begin{lstlisting}[language=C]
+	#include <stdio.h>
+	#include <unistd.h>
+	#include <assert.h>
+	#include <pthread.h>
+	#include <stdlib.h>
+
+	#include "common.h"
+	#include "common_threads.h"
+
+	#ifdef linux
+	#include <semaphore.h>
+	#elif __APPLE__
+	#include "zemaphore.h"
+	#endif
+
+	int max;
+	int loops;
+	int *buffer;
+
+	int use  = 0;
+	int fill = 0;
+
+	sem_t empty;
+	sem_t full;
+	sem_t mutex;
+
+	#define CMAX (10)
+	int consumers = 1;
+
+	void do_fill(int value) {
+		buffer[fill] = value;
+		fill++;
+		if (fill == max)
+		fill = 0;
+	}
+
+	int do_get() {
+		int tmp = buffer[use];
+		use++;
+		if (use == max)
+		use = 0;
+		return tmp;
+	}
+
+	void *producer(void *arg) {
+		int i;
+		for (i = 0; i < loops; i++) {
+		Sem_wait(&empty);
+		Sem_wait(&mutex);
+		do_fill(i);
+		Sem_post(&mutex);
+		Sem_post(&full);
+		}
+
+		// end case
+		for (i = 0; i < consumers; i++) {
+		Sem_wait(&empty);
+		Sem_wait(&mutex);
+		do_fill(-1);
+		Sem_post(&mutex);
+		Sem_post(&full);
+		}
+
+		return NULL;
+	}
+																				
+	void *consumer(void *arg) {
+		int tmp = 0;
+		while (tmp != -1) {
+		Sem_wait(&full);
+		Sem_wait(&mutex);
+		tmp = do_get();
+		Sem_post(&mutex);
+		Sem_post(&empty);
+		printf("%lld %d\n", (long long int) arg, tmp);
+		}
+		return NULL;
+	}
+
+	int main(int argc, char *argv[]) {
+		if (argc != 4) {
+		fprintf(stderr, "usage: %s <buffersize> <loops> <consumers>\n", argv[0]);
+		exit(1);
+		}
+		max   = atoi(argv[1]);
+		loops = atoi(argv[2]);
+		consumers = atoi(argv[3]);
+		assert(consumers <= CMAX);
+
+		buffer = (int *) malloc(max * sizeof(int));
+		assert(buffer != NULL);
+		int i;
+		for (i = 0; i < max; i++) {
+		buffer[i] = 0;
+		}
+
+		Sem_init(&empty, max); // max are empty 
+		Sem_init(&full, 0);    // 0 are full
+		Sem_init(&mutex, 1);   // mutex
+
+		pthread_t pid, cid[CMAX];
+		Pthread_create(&pid, NULL, producer, NULL); 
+		for (i = 0; i < consumers; i++) {
+		Pthread_create(&cid[i], NULL, consumer, (void *) (long long int) i); 
+		}
+		Pthread_join(pid, NULL); 
+		for (i = 0; i < consumers; i++) {
+		Pthread_join(cid[i], NULL); 
+		}
+		return 0;
+	}
+\end{lstlisting}
+\subsection{Output}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figure1/produce.png}
+	\caption{\textit{Producer/Consumer}}
+\end{figure}
+
+\subsection{Penjelasan \textit{Producer/Consumer}}
+
+\section{Reader/Writer Locks}
+\subsection{Source Code}
+\begin{lstlisting}[language=C]
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <pthread.h>
+	#include <unistd.h>
+	
+	#include "common.h"
+	#include "common_threads.h"
+	
+	#ifdef linux
+	#include <semaphore.h>
+	#elif __APPLE__
+	#include "zemaphore.h"
+	#endif
+	
+	typedef struct _rwlock_t {
+		sem_t writelock;
+		sem_t lock;
+		int readers;
+	} rwlock_t;
+	
+	void rwlock_init(rwlock_t *lock) {
+		lock->readers = 0;
+		Sem_init(&lock->lock, 1); 
+		Sem_init(&lock->writelock, 1); 
+	}
+	
+	void rwlock_acquire_readlock(rwlock_t *lock) {
+		Sem_wait(&lock->lock);
+		lock->readers++;
+		if (lock->readers == 1)
+		Sem_wait(&lock->writelock);
+		Sem_post(&lock->lock);
+	}
+	
+	void rwlock_release_readlock(rwlock_t *lock) {
+		Sem_wait(&lock->lock);
+		lock->readers--;
+		if (lock->readers == 0)
+		Sem_post(&lock->writelock);
+		Sem_post(&lock->lock);
+	}
+	
+	void rwlock_acquire_writelock(rwlock_t *lock) {
+		Sem_wait(&lock->writelock);
+	}
+	
+	void rwlock_release_writelock(rwlock_t *lock) {
+		Sem_post(&lock->writelock);
+	}
+	
+	int read_loops;
+	int write_loops;
+	int counter = 0;
+	
+	rwlock_t mutex;
+	
+	void *reader(void *arg) {
+		int i;
+		int local = 0;
+		for (i = 0; i < read_loops; i++) {
+		rwlock_acquire_readlock(&mutex);
+		local = counter;
+		rwlock_release_readlock(&mutex);
+		printf("read %d\n", local);
+		}
+		printf("read done: %d\n", local);
+		return NULL;
+	}
+	
+	void *writer(void *arg) {
+		int i;
+		for (i = 0; i < write_loops; i++) {
+		rwlock_acquire_writelock(&mutex);
+		counter++;
+		rwlock_release_writelock(&mutex);
+		}
+		printf("write done\n");
+		return NULL;
+	}
+	
+	int main(int argc, char *argv[]) {
+		if (argc != 3) {
+		fprintf(stderr, "usage: rwlock readloops writeloops\n");
+		exit(1);
+		}
+		read_loops = atoi(argv[1]);
+		write_loops = atoi(argv[2]);
+		
+		rwlock_init(&mutex); 
+		pthread_t c1, c2;
+		Pthread_create(&c1, NULL, reader, NULL);
+		Pthread_create(&c2, NULL, writer, NULL);
+		Pthread_join(c1, NULL);
+		Pthread_join(c2, NULL);
+		printf("all done\n");
+		return 0;
+	}
 \end{lstlisting}
 
-\subsection*{Penjelasan}
-	Pada percobaan \textit{Assignment 9} ini akan mencoba untuk menghapus baris kalimat yang mengandung kata yang dicari.
-	Pertama saya membuat file \textit{Handson1\_9\_120140141.sh} berisi kode seperti gambar. Setelah itu, diperlukan membuat file \textit{test\_9.sh}
-	untuk membuat kata-kata sebagai \textit{input}. Untuk menjalankannya kita perlu membuka terminal dan \textit{user} diminta untuk memasukkan 
-	kata untuk mencocokkan baris yang ingin di hapus dan akan di \textit{output} pada layar terminal. Pada kode kali ini menggunakan 
-	implementasi perintah \textit{echo, read, for, do, if, then, continue, fi, cat, dan sed}.
+\subsection{Output}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figure1/rwlock.png}
+	\caption{\textit{Reader/Writer Locks}}
+\end{figure}
+
+\subsection{Penjelasan \textit{Reader/Writer Locks}}
+
+\section{Dining Philosophers}
+\subsection{Deadlock}
+\subsubsection{Source Code}
+\begin{lstlisting}{language=C}
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <pthread.h>
+	
+	#include "common.h"
+	#include "common_threads.h"
+	
+	#ifdef linux
+	#include <semaphore.h>
+	#elif __APPLE__
+	#include "zemaphore.h"
+	#endif
+	
+	typedef struct {
+		int num_loops;
+		int thread_id;
+	} arg_t;
+	
+	sem_t forks[5];
+	sem_t print_lock;
+	
+	void space(int s) {
+		Sem_wait(&print_lock);
+		int i;
+		for (i = 0; i < s * 10; i++)
+		printf(" ");
+	}
+	
+	void space_end() {
+		Sem_post(&print_lock);
+	}
+	
+	int left(int p)  {
+		return p;
+	}
+	
+	int right(int p) {
+		return (p + 1) % 5;
+	}
+	
+	void get_forks(int p) {
+		space(p); printf("%d: try %d\n", p, left(p)); space_end();
+		Sem_wait(&forks[left(p)]);
+		space(p); printf("%d: try %d\n", p, right(p)); space_end();
+		Sem_wait(&forks[right(p)]);
+	}
+	
+	void put_forks(int p) {
+		Sem_post(&forks[left(p)]);
+		Sem_post(&forks[right(p)]);
+	}
+	
+	void think() {
+		return;
+	}
+	
+	void eat() {
+		return;
+	}
+	
+	void *philosopher(void *arg) {
+		arg_t *args = (arg_t *) arg;
+	
+		space(args->thread_id); printf("%d: start\n", args->thread_id); space_end();
+	
+		int i;
+		for (i = 0; i < args->num_loops; i++) {
+		space(args->thread_id); printf("%d: think\n", args->thread_id); space_end();
+		think();
+		get_forks(args->thread_id);
+		space(args->thread_id); printf("%d: eat\n", args->thread_id); space_end();
+		eat();
+		put_forks(args->thread_id);
+		space(args->thread_id); printf("%d: done\n", args->thread_id); space_end();
+		}
+		return NULL;
+	}
+																				 
+	int main(int argc, char *argv[]) {
+		if (argc != 2) {
+		fprintf(stderr, "usage: dining_philosophers <num_loops>\n");
+		exit(1);
+		}
+		printf("dining: started\n");
+		
+		int i;
+		for (i = 0; i < 5; i++) 
+		Sem_init(&forks[i], 1);
+		Sem_init(&print_lock, 1);
+	
+		pthread_t p[5];
+		arg_t a[5];
+		for (i = 0; i < 5; i++) {
+		a[i].num_loops = atoi(argv[1]);
+		a[i].thread_id = i;
+		Pthread_create(&p[i], NULL, philosopher, &a[i]);
+		}
+	
+		for (i = 0; i < 5; i++) 
+		Pthread_join(p[i], NULL); 
+	
+		printf("dining: finished\n");
+		return 0;
+	}
+\end{lstlisting}
+
+\newpage
+\subsubsection{Output}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figure1/dining_deadlock1.png}
+	\includegraphics[width=0.8\textwidth]{Figure1/dining_deadlock2.png}
+\end{figure}
+
+\subsubsection{Penjelasan \textit{Dining Philosophers Deadlock}}
+
+\newpage
+\subsection{No Deadlock}
+\subsubsection{Source Code}
+\begin{lstlisting}[language=C]
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <pthread.h>
+
+	#include "common.h"
+	#include "common_threads.h"
+
+	#ifdef linux
+	#include <semaphore.h>
+	#elif __APPLE__
+	#include "zemaphore.h"
+	#endif
+
+	typedef struct {
+		int num_loops;
+		int thread_id;
+	} arg_t;
+
+	sem_t forks[5];
+	sem_t print_lock;
+
+	void space(int s) {
+		Sem_wait(&print_lock);
+		int i;
+		for (i = 0; i < s * 10; i++)
+		printf(" ");
+	}
+
+	void space_end() {
+		Sem_post(&print_lock);
+	}
+
+	int left(int p)  {
+		return p;
+	}
+
+	int right(int p) {
+		return (p + 1) % 5;
+	}
+
+	void get_forks(int p) {
+		if (p == 4) {
+		space(p); printf("4 try %d\n", right(p)); space_end();
+		Sem_wait(&forks[right(p)]);
+		space(p); printf("4 try %d\n", left(p)); space_end();
+		Sem_wait(&forks[left(p)]);
+		} else {
+		space(p); printf("try %d\n", left(p)); space_end();
+		Sem_wait(&forks[left(p)]);
+		space(p); printf("try %d\n", right(p)); space_end();
+		Sem_wait(&forks[right(p)]);
+		}
+	}
+
+	void put_forks(int p) {
+		Sem_post(&forks[left(p)]);
+		Sem_post(&forks[right(p)]);
+	}
+
+	void think() {
+		return;
+	}
+
+	void eat() {
+		return;
+	}
+
+	void *philosopher(void *arg) {
+		arg_t *args = (arg_t *) arg;
+
+		space(args->thread_id); printf("%d: start\n", args->thread_id); space_end();
+
+		int i;
+		for (i = 0; i < args->num_loops; i++) {
+		space(args->thread_id); printf("%d: think\n", args->thread_id); space_end();
+		think();
+		get_forks(args->thread_id);
+		space(args->thread_id); printf("%d: eat\n", args->thread_id); space_end();
+		eat();
+		put_forks(args->thread_id);
+		space(args->thread_id); printf("%d: done\n", args->thread_id); space_end();
+		}
+		return NULL;
+	}
+																				
+	int main(int argc, char *argv[]) {
+		if (argc != 2) {
+		fprintf(stderr, "usage: dining_philosophers <num_loops>\n");
+		exit(1);
+		}
+		printf("dining: started\n");
+		
+		int i;
+		for (i = 0; i < 5; i++) 
+		Sem_init(&forks[i], 1);
+		Sem_init(&print_lock, 1);
+
+		pthread_t p[5];
+		arg_t a[5];
+		for (i = 0; i < 5; i++) {
+		a[i].num_loops = atoi(argv[1]);
+		a[i].thread_id = i;
+		Pthread_create(&p[i], NULL, philosopher, &a[i]);
+		}
+
+		for (i = 0; i < 5; i++) 
+		Pthread_join(p[i], NULL); 
+
+		printf("dining: finished\n");
+		return 0;
+	}
+\end{lstlisting}
+
+\newpage
+\subsubsection{Output}
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\def\svgwidth{\columnwidth}
+		\includegraphics[width=1\textwidth]{Figure1/dining_nodeadlock1.png}
+		\label{fig:nodeadlock1}
+	\end{subfigure}
+	\qquad %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\def\svgwidth{\columnwidth}
+		\includegraphics[width=1\textwidth]{Figure1/dining_nodeadlock2.png}
+		\label{fig:nodeadlock2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\def\svgwidth{\columnwidth}
+		\includegraphics[width=1\textwidth]{Figure1/dining_nodeadlock3.png}
+		\label{fig:nodeadlock3}
+	\end{subfigure}
+	\caption{Dining Philosophers No Deadlock}\label{fig:aug}
+\end{figure}
+
+\subsubsection{Penjelasan \textit{Dining Philosophers No Deadlock}}
 
 \newpage
 \section{Kesimpulan}
@@ -298,7 +737,7 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 	ini yang baru bagi saya, sehingga banyak sekali yang saya dapatkan dari tugas ini.
 		
 \section{Link GitHub}
-	Link GitHub dari Hands On 1 ini : \href{https://github.com/BilhaqAD07/Sistem-Operasi.git}{Klik disini}
+	Link GitHub dari Hands On 2 ini : \href{https://github.com/BilhaqAD07/Sistem-Operasi.git}{Klik disini}
 
 
 \newpage
