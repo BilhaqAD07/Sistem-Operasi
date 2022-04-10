@@ -173,7 +173,17 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 	\caption{\textit{Fork/Join}}
 \end{figure}
 
-\subsection{Penjelasan \textit{Fork/Join}}
+\subsection{Penjelasan \textit{Fork/Join}} 
+Semaphore merupakan sebuah struktur data komputer yang berguna dalam sinkronisasi proses dan berfungsi dalam memerintah program agar menjalankan proses.
+Sebagai contohnya adalah saat suatu \textit{thread} sedang menunggu \textit{list} supaya \textit{list} tersebut berisi atau tidak keadaan kosong. Dari kondisi tersebut, 
+semaphore tadi akan di definisikan dan di inisiasi menjadi 0 oleh \textit{Sem init}. Maksud dari proses tersebut ialah semaphore akan dibagi antara \textit{threads} pada proses
+yang sama. Kemudian apabila pembuatan \textit{thread} sudah selesai akan dilanjutkan pemanggilan fungsi \textit{child} semaphore yang akan melakukan sinyal bahwa 
+proses \textit{child} sudah selesai dan mulai me-\textit{return}. Apabila \textit{child} sudah selesai, maka semaphore akan melanjutkannya dan mengeluarkan \textit{output} 
+"parent : end". \par
+Pada implementasinya, terdapat fungsi \textit{Sem wait} dan \textit{Sem post} yang digunakan dalam menunggu kondisi \textit{child} dari \textit{parent} selesai eksekusi.
+pada kode tersebut terlihat bahwa \textit{value} semaphore harus diubah menjadi 0 karena apabila kondisi tersebut tidak dilakukan akan membuat \textit{parent} memanggil fungsi 
+\textit{Sem wait} duluan sebelum \textit{child} selesai memanggil fungsi \textit{Sem post}. Dan dari situ, dapat diketahui bila \textit{value} semaphore lebih dari 0 akan melakukan pengurangan 
+untuk melakukan \textit{sleeps} selama 2 detik. Apabila \textit{value} semaphore sama dengan 0, maka program mulai menjalankan \textit{parent} dan selesai.
 
 
 \section{Binary Semaphores}
@@ -226,6 +236,12 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 \end{figure}
 
 \subsection{Penjelasan \textit{Binary Semaphores}}
+Pada potongan kode di atas terdapat variabel \textit{Sem t mutex} atau bisa disebut dengan \textit{mutual exclusion} yang berfungsi dalam mengatur penggunaan \textit{resource}. \textit{mutex} tersebut ada agar mencegah sebuah
+\textit{race condition}. Pada awalnya kita mendefinisikan dan menginisialisasikan semaphore \textit{mutex} tesebut dengan \textit{value} sebesar 1, kemudian dibuatlah \textit{thread} berinisial c1 dan c2 yang mana berguna dalam 
+menjalankan fungsi \textit{child}. Selanjutntya, i akan di inisiasi pada perulangan sampai nilai i kurang dari 10000000 yang mana akan menjalankan \textit{Sem wait} dan di saat itu juga \textit{value} akan berkurang dan mulailah terjadi 
+\textit{critical section}, akan ada penambahan nilai \textit{counter} yang kemudian semaphore memproses \textit{calling} dengan menambah \textit{value} dari semaphore tersebut sebagai tanda \textit{critical section} sudah selesai.
+Berikutnya, program akan mengulangi proses tersebut hingga syarat telah tercapai yang kemudian akan dilanjutkan oleh \textit{thread} c2 melakukan fungsi \textit{child}. Bila sudah selesai, maka akan memulai \textit{return} ke fungsi \textit{main} 
+yang akan menampilkan hasil dari \textit{counter} yang telah dijalankan dengan menampilkan \textit{output} senilai 20000000.
 
 \section{Producer/Consumer}
 \subsection{Source Code}
@@ -350,7 +366,18 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 \end{figure}
 
 \subsection{Penjelasan \textit{Producer/Consumer}}
+Pada program implementasi \textit{Producer/Consumer} ini bisa kita sebut dengan \textit{bounded buffer}. Isi program tersebut ialah memanggil, mengurangi, mengahalngi konsumer, dan menunggu \textit{thread} lain agar dapat memanggil \textit{Sem post} saat terjadi \textit{full}. 
+Selanjutntya, program akan memulai fungsi \textit{procedure} yang berguna dalam memanggil \textit{Sem wait(empty)} dan \textit{Sem post(mutex)}. Pada fungsi \textit{procedur} juga menjalankan terus sampai \textit{empty} tadi menjadi \textit{max}. \textit{Producer} akan melakukan pengisian 
+dengan fungsi \textit{do fill} di \textit{entry} pertama \textit{buffer} setelah \textit{empty} berkurang hingga mencapai nilai 0. Berikutnya, \textit{producer} akan terus berjalan sampai suatu saat nanti memanggil \textit{Sem post(mutex)} dan \textit{Sem post(full)} yang mana akan mengganti 
+nilai \textit{value full} dari nilai -1 menjadi 0. Sehingga, \textit{Consumer} akan melakukan fungsi \textit{looping} ulang dan memblok dengan \textit{value empty} semaphore bernilai kosong. \par
+Apabila terjadi kondisi saat \textit{producer interrupted}, maka fungsi \textit{Consumer} mulai berjalan dengan kembalinya dari saat \textit{Sem wait(full)}, lalu akan memakai \textit{buffer} oleh berjalannya fungsi \textit{do get}. Kondisi dua \textit{producer} akan \textit{interrupted} apabila keduanya 
+menjalankan fungsi \textit{do fill} pada waktu yang sama. Kondisi \textit{interruped} juga terjadi jika \textit{producer} yang ke-1 mengisi \textit{entry buffer} pertama kali, saat belum selesai dalam kesempatan mengisinya, maka \textit{producer} ke-1 akan ter-\textit{interruped}. Pada saat itulah \textit{producer} 
+ke-2 menjalankan fungsi \textit{do fill} yang mana memasukkan elemen ke \textit{buffer}, kondisi tersebut berarti bahwa data lama akan terganti dengan yang baru. Oleh sebab itu, dibutuhkannya \textit{binary semaphore} dan ditambahnya \textit{locks} agar menghindarinya \textit{deadlock}. Dari situ, \textit{consumer} 
+menjalankan yang pertama dengan memanggil \textit{Sem wait(full)} akbiat belum terdapatnya data. Dengan adanya pemanggilan tersebut, \textit{consumer} akan melakukan blok, selanjutnya \textit{producer} berjalan yang mana akan memulai \textit{consumer thread} dan memanggil \textit{Sem wait(mutex)} dengan \textit{producer} 
+yang mengalami buntu atau \textit{stuck}. Pada program di atas terdapat juga \textit{cycle} yang simpel, \textit{consumer} menahan mutex agar menunggu untuk diberikan sinyal \textit{full}. Faktanya \textit{producer} bisa saja memanggil sinyal \textit{full}, tetapi tetap menunggu hingga \textit{consumer} dan \textit{producer} mengalami \textit{deadlock}. Oleh karena itu, 
+dibutuhkannya pengurangan \textit{lock} dengan memindahkan \textit{mutex} dan melepaskannya pada sekitar \textit{critical section} akan menghasilkan \textit{working bounded buffer}.
 
+\newpage
 \section{Reader/Writer Locks}
 \subsection{Source Code}
 \begin{lstlisting}[language=C]
@@ -456,11 +483,24 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 \subsection{Output}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Figure1/rwlock.png}
+	\includegraphics[width=0.75\textwidth]{Figure1/rwlock.png}
 	\caption{\textit{Reader/Writer Locks}}
 \end{figure}
 
+\newpage
 \subsection{Penjelasan \textit{Reader/Writer Locks}}
+Pada program implementasi \textit{Reader/Writer Locks}, dapat dilihat bahwa terdapat \textit{classic problem} dari \textit{flexible locking primitive} yang menunjukkan bahwa 
+akses struktur data berbeda perlu dibutuhkannya kunci spesial yang dibuat sebagai pembantu tipe operasi seperti \textit{reader/writer locks}. Apabila suatu saat \textit{thread} 
+memperbaruit struktur datanya agar dapat memanggil pasangan operasi sinkronisasi \textit{rwlock acquire writelock} yang mana berfungsi dalam mendapatkan \textit{write lock} dan 
+\textit{rwlock release writelock} untuk melepaskannya. Secara umumnya, semaphore \textit{writelock} untuk memastikan hanya satu \textit{writer} saja yang mendapatkan \textit{lock} dan 
+memperbarui struktur datanya dengan masuknya ke \textit{critical section}. \par
+Kondisi ketika \textit{lock} didapatkan, \textit{reader} yang pertama akan mendapatkan \textit{lock} tersebut dan mulai menambahkan variabel pembaca agar dapat melacak berapa pembaca yang 
+ada saat ini pada struktur data. Perlu diperhatikan bahwa \textit{rwlock acquire readlock} terjadi saat pembaca ke-1 mendapatkan \textit{lock} dan \textit{writelock} dengan memanggil \text{Sem wait} 
+pada saat semaphore \textit{writelock} yang akan dilepaskan \textit{lock}-nya saat memanggil \textit{Sem post}. \par
+Selanjutnya, saat semua \textit{threads} diharapkan mendapatakan \textit{writelock} wajib menunggu sampai semua \textit{reader} telahh selesai dijalankan. Saat urutan terakhir keluar dari \textit{critical section}, akan 
+memanggil \textit{Sem post} pada \textit{writelock} dan mulai mengaktifkannya \textit{writer} dengan menunggu dapatnya \textit{lock}. Pada akhirnya, pencatatan \textit{readwriter locks} wajib dilakukan secara hati-hati karena 
+hal tersebut akan menambahkan \textit{overhead} dan tidak menambah performa yang berguna sebagai komparansi di \textit{simple} dan \textit{fast locking primptive}.
+
 
 \section{Dining Philosophers}
 \subsection{Deadlock}
@@ -572,7 +612,6 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 	}
 \end{lstlisting}
 
-\newpage
 \subsubsection{Output}
 \begin{figure}[h]
 	\centering
@@ -581,8 +620,13 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 \end{figure}
 
 \subsubsection{Penjelasan \textit{Dining Philosophers Deadlock}}
+Pada implementasi program \textit{Dining Philosopher Deadlock} mempunyai cerita yang menarik dibelakangnya. Terdapat suatu masalah konkurensi yang dulu terkenal yang hanya diselesaikan 
+oleh djikstra, masalah tersebut terkenal karena seru dan menarik secara intelektual yaitu dengan nama \textit{Philosopher problem}. Kondisinya ketika 5 \textit{philoshoper} yang duduk mengelilingi 
+meja bundar terdapat sepasang \textit{philosopher single fork} yang mana untuk memulai makan dibutuhkan sepasang \textit{forks} satu di sebelah kanan dan satu di sebelah kiri. Dengan adanya solusi oleh 
+Downey, diperlukannya beberapa fungsi bantu yang disebut \textit{left} dam \textit{right}. \par
+Kondisi ketika \textit{philosopher P} diminta agar merujuk ke \textit{fork} kiri akan memulai memanggil fungsi \textit{left}, dan sebaliknya jika diminta merujuk ke \textit{fork} kanan akan memanggil fungsi 
+\textit{right}. Terdapat \textit{modulo} yang mana menangani satu persoalan yaitu \textit{philosopher} akhir dengan P sama dengan 4 mengambil \textit{fork} bagian kanan saat \textit{fork} bernilai kosong.
 
-\newpage
 \subsection{No Deadlock}
 \subsubsection{Source Code}
 \begin{lstlisting}[language=C]
@@ -727,14 +771,24 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 \end{figure}
 
 \subsubsection{Penjelasan \textit{Dining Philosophers No Deadlock}}
+Pada implementasi program \textit{Dining Philosophers No Deadlock} di atas menjelaskan tentang percobaan menginisialisasi setiap semaphore di \textit{fork array} agar bernilai 1.
+Perlu kita ketahui bahwa \textit{philosopher} mempunyai angka dan juga kita bisa menuliskan \textit{get forks} dan \textit{put forks} secara terus-menerus. Kemudian, kita memerlukan 
+\textit{lock} untuk mendapati \textit{forks} dengan mendapatkan \textit{forks} sebelah kiri dan dilanjutkan sebelah kanan. Kemudian pastinya ketika kita selesai memakainya pasti akan kita 
+lepaskan, tetapi kondisi tersebut tidak terjadi karena adanya \textit{deadlock}. Apabila setiap \textit{philosopher} mengambil \textit{fork} sebelah kiri terlebih dahulu sebelum bisa mengambil 
+\textit{fork} sebelah kanan, maka menyebabkan \textit{stuck} dan dapat menahan satu \textit{fork} yang mana membuat \textit{fork} lainnya menunggu untuk selamanya. \par
+Contoh dari penggambarannya ialah misalkan \textit{philosopher} 0 mengambil \textit{fork} 0, \textit{philosopher} 1 mengambil \textit{fork} 1, \textit{philosopher} 2 mengambil \textit{fork} 2, dan 
+\textit{philoshoper} 3 mengambil \textit{fork} 3 akan menyebabkan semua \textit{philosopher} terperangkap atau \textit{stuck} karena tidak ada ruangan pada \textit{philosopher}. \par
+Dari permasalahan tersebut Djikstra menemukan solusinya dengan mengganti \textit{fork} mendapatkan satu \textit{philosopher} saja. Dengan asumsi 4 \textit{philosopher} mengambil \textit{fork} melalui 
+aturan yang berbeda dengan sebelumnya, hal tersebut disebabkan karena \textit{philoshoper} akhir mengambil sebelah kanan terlebih dahulu seelum sebelah kiri. Pasalnya, tidak ada aturan \textit{philosopher} 
+mengambil satu \textit{fork} dan mengalami \textit{stuck} dengan menunggu \textit{fork} lainnya. Oleh karena itu, adanya siklus \textit{waiting} ini merusak prosesnya.
 
 \newpage
 \section{Kesimpulan}
-	Pada Hands On 1 ini yang saya dapatkan setelah menjalankannya ialah saya dapat mengenal sistem operasi linux
-	khususnya Ubuntu 20.04 LTS ini meskipun hanya menggunakan Oracle VirtualBox. Selain itu, saya dapat mengetahui
-	banyak hal dari tugas ini yaitu itu menggunakan konsep-konsep baru dan mengimplementasikannya pada terminal di linux.
-	Dengan begitu, saya dapat menyelesaikan tugas ini sesuai dengan kemampuan yang saya miliki terutama menggunakan latex
-	ini yang baru bagi saya, sehingga banyak sekali yang saya dapatkan dari tugas ini.
+	Pada Hands On 2 ini, yang saya dapatkan setelah mengerjakannya ialah saya dapat mengerti lebih dalam dengan materi 
+	\textit{Synchronisation and Deadlock} dengan adanya pemberian kode program dari suatu \textit{programmer} yang membuat 
+	programnya sesuai dengan impelementasi materi tersebut. Dan begitu juga saya mengerti tentang adanya penggunaan Semaphore 
+	pada program yang telah dijalankan. Dengan demikian, saya dapat menejelajahi lebih dalam terkait dengan materi sinkronisasi 
+	dan \textit{deadlock} ini atas tugas Hands On 2 yant telah diberikan.
 		
 \section{Link GitHub}
 	Link GitHub dari Hands On 2 ini : \href{https://github.com/BilhaqAD07/Sistem-Operasi.git}{Klik disini}
