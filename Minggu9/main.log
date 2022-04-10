@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.6)  11 APR 2022 01:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.3.6)  11 APR 2022 01:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1051,13 +1051,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  31225 strings out of 478276
  550506 string characters out of 5850490
- 1407301 words of memory out of 5000000
+ 1407295 words of memory out of 5000000
  48315 multiletter control sequences out of 15000+600000
  539996 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,89p,3268b,1969s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinLibertineTBI.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on main.pdf (15 pages, 1456579 bytes).
+Output written on main.pdf (15 pages, 1456576 bytes).
 PDF statistics:
  864 PDF objects out of 1000 (max. 8388607)
  808 compressed objects within 9 object streams

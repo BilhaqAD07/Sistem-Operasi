@@ -125,7 +125,7 @@ Mata Kuliah: \course \hfill Tanggal: \today\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BODY DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tujuan Hands On 2}
     Tujuan adanya Hands On kedua adalah untuk memahami bagaimana sistem bersinkronisasi dan permasalahan yang ada, serta juga memahami solusinya saat menjalankan critical section.
-	Adapun beberapa implementasi yang diharuskan untun dipahami pada Hands On kedua ini antara lain : \textit{join} menggunakan semaphores, \textit{Binary Semaphores}, 
+	Adapun beberapa implementasi yang diharuskan dipahami pada Hands On kedua ini antara lain : \textit{join} menggunakan semaphores, \textit{Binary Semaphores}, 
 	\textit{Produces Consumer}, \textit{Reader/Writer Locks}, dan \textit{Dining Philosophers}.
 
 
@@ -366,8 +366,8 @@ yang akan menampilkan hasil dari \textit{counter} yang telah dijalankan dengan m
 \end{figure}
 
 \subsection{Penjelasan \textit{Producer/Consumer}}
-Pada program implementasi \textit{Producer/Consumer} ini bisa kita sebut dengan \textit{bounded buffer}. Isi program tersebut ialah memanggil, mengurangi, mengahalngi konsumer, dan menunggu \textit{thread} lain agar dapat memanggil \textit{Sem post} saat terjadi \textit{full}. 
-Selanjutntya, program akan memulai fungsi \textit{procedure} yang berguna dalam memanggil \textit{Sem wait(empty)} dan \textit{Sem post(mutex)}. Pada fungsi \textit{procedur} juga menjalankan terus sampai \textit{empty} tadi menjadi \textit{max}. \textit{Producer} akan melakukan pengisian 
+Pada program implementasi \textit{Producer/Consumer} ini bisa kita sebut dengan \textit{bounded buffer}. Isi program tersebut ialah memanggil, mengurangi, menghalangi konsumer, dan menunggu \textit{thread} lain agar dapat memanggil \textit{Sem post} saat terjadi \textit{full}. 
+Selanjutnya, program akan memulai fungsi \textit{procedure} yang berguna dalam memanggil \textit{Sem wait(empty)} dan \textit{Sem post(mutex)}. Pada fungsi \textit{procedur} juga menjalankan terus sampai \textit{empty} tadi menjadi \textit{max}. \textit{Producer} akan melakukan pengisian 
 dengan fungsi \textit{do fill} di \textit{entry} pertama \textit{buffer} setelah \textit{empty} berkurang hingga mencapai nilai 0. Berikutnya, \textit{producer} akan terus berjalan sampai suatu saat nanti memanggil \textit{Sem post(mutex)} dan \textit{Sem post(full)} yang mana akan mengganti 
 nilai \textit{value full} dari nilai -1 menjadi 0. Sehingga, \textit{Consumer} akan melakukan fungsi \textit{looping} ulang dan memblok dengan \textit{value empty} semaphore bernilai kosong. \par
 Apabila terjadi kondisi saat \textit{producer interrupted}, maka fungsi \textit{Consumer} mulai berjalan dengan kembalinya dari saat \textit{Sem wait(full)}, lalu akan memakai \textit{buffer} oleh berjalannya fungsi \textit{do get}. Kondisi dua \textit{producer} akan \textit{interrupted} apabila keduanya 
@@ -491,7 +491,7 @@ dibutuhkannya pengurangan \textit{lock} dengan memindahkan \textit{mutex} dan me
 \subsection{Penjelasan \textit{Reader/Writer Locks}}
 Pada program implementasi \textit{Reader/Writer Locks}, dapat dilihat bahwa terdapat \textit{classic problem} dari \textit{flexible locking primitive} yang menunjukkan bahwa 
 akses struktur data berbeda perlu dibutuhkannya kunci spesial yang dibuat sebagai pembantu tipe operasi seperti \textit{reader/writer locks}. Apabila suatu saat \textit{thread} 
-memperbaruit struktur datanya agar dapat memanggil pasangan operasi sinkronisasi \textit{rwlock acquire writelock} yang mana berfungsi dalam mendapatkan \textit{write lock} dan 
+memperbarui struktur datanya agar dapat memanggil pasangan operasi sinkronisasi \textit{rwlock acquire writelock} yang mana berfungsi dalam mendapatkan \textit{writelock} dan 
 \textit{rwlock release writelock} untuk melepaskannya. Secara umumnya, semaphore \textit{writelock} untuk memastikan hanya satu \textit{writer} saja yang mendapatkan \textit{lock} dan 
 memperbarui struktur datanya dengan masuknya ke \textit{critical section}. \par
 Kondisi ketika \textit{lock} didapatkan, \textit{reader} yang pertama akan mendapatkan \textit{lock} tersebut dan mulai menambahkan variabel pembaca agar dapat melacak berapa pembaca yang 
@@ -621,7 +621,7 @@ hal tersebut akan menambahkan \textit{overhead} dan tidak menambah performa yang
 
 \subsubsection{Penjelasan \textit{Dining Philosophers Deadlock}}
 Pada implementasi program \textit{Dining Philosopher Deadlock} mempunyai cerita yang menarik dibelakangnya. Terdapat suatu masalah konkurensi yang dulu terkenal yang hanya diselesaikan 
-oleh djikstra, masalah tersebut terkenal karena seru dan menarik secara intelektual yaitu dengan nama \textit{Philosopher problem}. Kondisinya ketika 5 \textit{philoshoper} yang duduk mengelilingi 
+oleh Djikstra, masalah tersebut terkenal karena seru dan menarik secara intelektual yaitu dengan nama \textit{Philosopher problem}. Kondisinya ketika 5 \textit{philoshoper} yang duduk mengelilingi 
 meja bundar terdapat sepasang \textit{philosopher single fork} yang mana untuk memulai makan dibutuhkan sepasang \textit{forks} satu di sebelah kanan dan satu di sebelah kiri. Dengan adanya solusi oleh 
 Downey, diperlukannya beberapa fungsi bantu yang disebut \textit{left} dam \textit{right}. \par
 Kondisi ketika \textit{philosopher P} diminta agar merujuk ke \textit{fork} kiri akan memulai memanggil fungsi \textit{left}, dan sebaliknya jika diminta merujuk ke \textit{fork} kanan akan memanggil fungsi 
@@ -779,7 +779,7 @@ lepaskan, tetapi kondisi tersebut tidak terjadi karena adanya \textit{deadlock}.
 Contoh dari penggambarannya ialah misalkan \textit{philosopher} 0 mengambil \textit{fork} 0, \textit{philosopher} 1 mengambil \textit{fork} 1, \textit{philosopher} 2 mengambil \textit{fork} 2, dan 
 \textit{philoshoper} 3 mengambil \textit{fork} 3 akan menyebabkan semua \textit{philosopher} terperangkap atau \textit{stuck} karena tidak ada ruangan pada \textit{philosopher}. \par
 Dari permasalahan tersebut Djikstra menemukan solusinya dengan mengganti \textit{fork} mendapatkan satu \textit{philosopher} saja. Dengan asumsi 4 \textit{philosopher} mengambil \textit{fork} melalui 
-aturan yang berbeda dengan sebelumnya, hal tersebut disebabkan karena \textit{philoshoper} akhir mengambil sebelah kanan terlebih dahulu seelum sebelah kiri. Pasalnya, tidak ada aturan \textit{philosopher} 
+aturan yang berbeda dengan sebelumnya, hal tersebut disebabkan karena \textit{philoshoper} akhir mengambil sebelah kanan terlebih dahulu sebelum sebelah kiri. Pasalnya, tidak ada aturan \textit{philosopher} 
 mengambil satu \textit{fork} dan mengalami \textit{stuck} dengan menunggu \textit{fork} lainnya. Oleh karena itu, adanya siklus \textit{waiting} ini merusak prosesnya.
 
 \newpage
