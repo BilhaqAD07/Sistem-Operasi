@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1649616113 "main.aux" "main.bbl" "main" 1649616120
+["bibtex main"] 1649616253 "main.aux" "main.bbl" "main" 1649616261
   "Referensi.bib" 0 -1 0 ""
   "c:/texlive/2021/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1646543859 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1649616117 5766 3bb37a45d7ecc8145a2a72dc4167d588 "pdflatex"
+  "main.aux" 1649616257 5766 3bb37a45d7ecc8145a2a72dc4167d588 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1649616113 "d:/BAD/ITERA/Sistem-Operasi/Minggu9/main.tex" "main.pdf" "main" 1649616120
+["pdflatex"] 1649616253 "d:/BAD/ITERA/Sistem-Operasi/Minggu9/main.tex" "main.pdf" "main" 1649616261
   "Figure1/binary.png" 1649477461 154702 344ea05e581688ff2a40ef8de83c07b5 ""
   "Figure1/dining_deadlock1.png" 1649477461 120033 352addf680990ad85efffdfcf45abaad ""
   "Figure1/dining_deadlock2.png" 1649477461 107323 c583841290862bd9735ac6b960684108 ""
@@ -248,11 +248,11 @@
   "c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1646550785 4448422 1ce8db434ffa4259b75148f2b12051ea ""
   "c:/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1646550945 2797722 fdee43d8efb1a174d53f22e129df7ad1 ""
   "c:/texlive/2021/texmf.cnf" 1646550721 713 e69b156964470283e0530f5060668171 ""
-  "d:/BAD/ITERA/Sistem-Operasi/Minggu9/main.tex" 1649616111 28502 72903d00f928d33cfe99e60947a587a6 ""
-  "main.aux" 1649616117 5766 3bb37a45d7ecc8145a2a72dc4167d588 "pdflatex"
+  "d:/BAD/ITERA/Sistem-Operasi/Minggu9/main.tex" 1649616251 28511 b4e88fc76c7aa62c516273b74988c7a7 ""
+  "main.aux" 1649616257 5766 3bb37a45d7ecc8145a2a72dc4167d588 "pdflatex"
   "main.bbl" 0 -1 0 "bibtex main"
-  "main.out" 1649616117 3779 d6a505f89cb86204667e2d0bd350e5f1 "pdflatex"
-  "main.tex" 1649616111 28502 72903d00f928d33cfe99e60947a587a6 ""
+  "main.out" 1649616257 3779 d6a505f89cb86204667e2d0bd350e5f1 "pdflatex"
+  "main.tex" 1649616251 28511 b4e88fc76c7aa62c516273b74988c7a7 ""
   (generated)
   "main.aux"
   "main.log"
